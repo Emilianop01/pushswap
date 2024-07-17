@@ -1,6 +1,6 @@
 NAME		=	push_swap
 
-SRC			=	atoi.c checks.c checks2.c findeco.c frees.c mosse.c mosse2.c mosse3.c push_swap.c pushrotator.c rotations.c solve.c solvefinal.c stack.c\
+SRC			=	atoi.c checks.c checks2.c findeco.c frees.c mosse.c mosse2.c mosse3.c push_swap.c pushrotator.c rotations.c solve.c solvefinal.c solvefinal2.c stack.c\
 
 OBJ			=	$(SRC:.c=.o)
 

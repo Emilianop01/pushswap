@@ -3,15 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   checks2.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: epiacent <epiacent@student.42roma.it>      +#+  +:+       +#+        */
+/*   By: epiacent <epiacent@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/01 18:31:53 by epiacent          #+#    #+#             */
-/*   Updated: 2024/07/10 17:48:46 by epiacent         ###   ########.fr       */
+/*   Created: 2024/07/17 18:39:02 by epiacent          #+#    #+#             */
+/*   Updated: 2024/07/17 20:02:08 by epiacent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-//polipo
 
 int	countw(char const *str)
 {
@@ -32,10 +31,12 @@ int	countw(char const *str)
 	return (j + 2);
 }
 
-int	copiaw(const char *s, char **frase, int i, int l, int j)
+int	copiaw(const char *s, char **frase, int i, int j)
 {
 	int	k;
-	
+	int	l;
+
+	l = 1;
 	frase[0] = NULL;
 	while (s[i])
 	{
@@ -63,18 +64,16 @@ char	**split(char const *str)
 {
 	char	**arr;
 	int		i;
-	int		l;
 	int		j;
 
 	if (!str)
 		return (NULL);
 	i = 0;
-	l = 1;
 	j = 0;
 	arr = (char **)malloc(countw(str) * sizeof(char *));
 	if (!arr)
 		return (NULL);
-	if (copiaw(str, arr, i, l, j) == 0)
+	if (copiaw(str, arr, i, j) == 0)
 	{
 		freematrix(arr);
 		return (NULL);

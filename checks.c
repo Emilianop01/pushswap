@@ -3,40 +3,39 @@
 /*                                                        :::      ::::::::   */
 /*   checks.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: epiacent <epiacent@student.42roma.it>      +#+  +:+       +#+        */
+/*   By: epiacent <epiacent@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/19 18:22:10 by epiacent          #+#    #+#             */
-/*   Updated: 2024/07/13 17:07:14 by epiacent         ###   ########.fr       */
+/*   Created: 2024/07/17 18:40:34 by epiacent          #+#    #+#             */
+/*   Updated: 2024/07/17 20:10:21 by epiacent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdio.h>
 #include "push_swap.h"
 
-int isnumb(char *n)
+int	isnumb(char *n)
 {
-    int i;
+	int	i;
 
-    i = 0;
-    while (n[i] == ' ')
-        i++;
-    if (n[i] == '+' || n[i] == '-')
-        i++;
-    if (!n[i])
-        return (0);
-    while (n[i])
-    {
-        if ('0' <= n[i] && n[i] <= '9')
-            i++;
-        else
-            return (0);
-    }
-    while (n[i] == ' ')
-        i++;
-    if (n[i])
-        return (0);
-    return (1);
+	i = 0;
+	while (n[i] == ' ')
+		i++;
+	if (n[i] == '+' || n[i] == '-')
+		i++;
+	if (!n[i])
+		return (0);
+	while (n[i] && ('0' <= n[i] && n[i] <= '9'))
+	{
+		i++;
+	}
+	while (n[i] == ' ')
+	{
+		i++;
+	}
+	if (n[i])
+		return (0);
+	return (1);
 }
-
 
 int	checkdup(t_duo *stack)
 {
@@ -58,16 +57,16 @@ int	checkdup(t_duo *stack)
 	return (1);
 }
 
-int checkorder(t_duo *duo)
+int	checkorder(t_duo *duo)
 {
-    t_list  *curr;
+	t_list	*curr;
 
-    curr = duo->a.head;
-    while (curr->next != NULL)
-    {
-        if (curr->content > curr->next->content)
-            return (1);
-        curr = curr->next;
-    }
-    return (0);
+	curr = duo->a.head;
+	while (curr->next != NULL)
+	{
+		if (curr->content > curr->next->content)
+			return (1);
+		curr = curr->next;
+	}
+	return (0);
 }
